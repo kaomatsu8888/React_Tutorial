@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <title>今日の一言</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            text-align: center;
+            padding: 30px;
+        }
+
+        #quoteBox {
+            border: 2px solid #ccc;
+            border-radius: 10px;
+            padding: 20px;
+            font-size: 1.5em;
+            margin-bottom: 20px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 1em;
+        }
+    </style>
+    <p>ここはheadの終わり</p>
+</head>
+
+<body>
+    <p>ここはbodyのスタート位置やね</p>
+    <h1>🌟 今日の一言 🌟</h1>
+    <div id="quoteBox">ここに一言が出るよ！</div>
+    <button onclick="showRandomQuote()">更新</button>
+    <p>ここはbodyの途中</p>
+    <script>
+        const quotes = [
+            "今日も一歩前進！",
+            "失敗は成功のもと。",
+            "コツコツがカギ。",
+            "焦らず、自分のペースで。",
+            "まずはやってみよう！"
+        ];
+
+        function showRandomQuote() {
+            const randomIndex = Math.floor(Math.random() * quotes.length);
+            document.getElementById("quoteBox").innerText = quotes[randomIndex];
+        }
+
+        // ページ読み込み時にも1つ表示
+        window.onload = showRandomQuote;
+    </script>
+</body>
+
+</html>
